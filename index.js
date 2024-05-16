@@ -11,7 +11,7 @@ const bodyparser=require("body-parser");
 const path=require('path');
 // create the instance
 const app=express()
-const PORT=4000
+const PORT=process.env.PORT || 4000;
 
 // to access .env values
 dotEnv.config()
@@ -32,6 +32,6 @@ app.listen(PORT,()=>{
     console.log(`server started and running at ${PORT}`)
 })
 
-app.use('/home',(req,res)=>{
+app.use('/',(req,res)=>{
     res.send("<h1> Welcome")
 })
