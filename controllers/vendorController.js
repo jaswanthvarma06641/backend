@@ -39,7 +39,7 @@ const vendorLogin=async(req,res)=>{
         const token=jwt.sign({vendorId: vendor._id},secretKey,{expiresIn:"1h"})
 
         res.status(201).json({message:"login successful", token})
-        console.log(email, token);
+        // console.log(email, token);
     }catch(error){
         console.log(error)
         res.status(500).json({error:"Internal server error"})

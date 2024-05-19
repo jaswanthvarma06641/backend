@@ -7,6 +7,7 @@ const vendorRoutes=require("./routes/vendorRoutes");
 const firmRoutes=require("./routes/firmRoutes");
 const productRoutes=require("./routes/productRoutes");
 const bodyparser=require("body-parser");
+const cors =require("cors");
 // const cors=require('cors');
 const path=require('path');
 // create the instance
@@ -15,6 +16,7 @@ const PORT=process.env.PORT || 4000;
 
 // to access .env values
 dotEnv.config()
+app.use(cors())
 
 // after connect need to give promise with then and catch
 mongoose.connect(process.env.MONGO_URI)
